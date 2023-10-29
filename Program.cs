@@ -8,7 +8,7 @@ class Program
         Clinica clinica = new Clinica();
         bool continuar = true;
 
-        Console.WriteLine("Bienvenido al Sistema de Facturación de la Clínica Médica");
+        Console.WriteLine("Bienvenida/o al Sistema de Facturación de la Clínica Médica");
 
         while (continuar)
         {

@@ -12,7 +12,9 @@
 
         public override double CalcularPrecio()
         {
-            return CantidadDias * 20000.0;
+            double precioBase = CantidadDias * 20000.0;
+            double iva = precioBase * 0.21;
+            return precioBase + (iva/2);
         }
     }
 }

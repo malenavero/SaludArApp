@@ -16,12 +16,13 @@ namespace saludAr.Clases
 
         public override double CalcularPrecio()
         {
-            double precio = CantidadDias * 10000.0;
+            double precioBase = CantidadDias * 10000.0;
             if (NivelComplejidad > 3)
             {
-                precio += 0.25 * precio;
+                precioBase += 0.25 * precioBase;
             }
-            return precio;
+            double iva = precioBase * 0.21;
+            return precioBase + (iva/2);
         }
     }
 }
