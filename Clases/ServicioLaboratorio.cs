@@ -6,7 +6,8 @@ namespace saludAr.Clases
         public string Nombre { get; set; }
         public int NivelComplejidad { get; set; }
 
-        public ServicioLaboratorio(string nombre, int nivelComplejidad, int cantidadDias)
+        //cambie el orden de los parametros porque no funcionaba bien el calculo de los servicios de laboratorio de complejidad
+        public ServicioLaboratorio(string nombre, int cantidadDias, int nivelComplejidad)
            : base(cantidadDias)
 
         {
@@ -16,7 +17,7 @@ namespace saludAr.Clases
 
         public override double CalcularPrecio()
         {
-            double precioBase = CantidadDias * 10000.0;
+            double precioBase = CantidadDias * 10000;
             if (NivelComplejidad > 3)
             {
                 precioBase += 0.25 * precioBase;

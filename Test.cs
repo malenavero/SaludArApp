@@ -1,7 +1,7 @@
 ﻿using saludAr.Clases;
 using System;
 
-class Program
+class Test
 {
     public static void Main(string[] args)
     {

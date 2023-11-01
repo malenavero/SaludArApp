@@ -50,7 +50,8 @@ internal class Clinica
 
         foreach (Servicio servicio in items)
         {
-            if (servicio is ServicioLaboratorio laboratorio && laboratorio.NivelComplejidad < 3)
+            //le puse el igual porque en calcular precio se toma como servicio de complejidad los mayores a tres, o sea 4 y 5, para que quede igual
+            if (servicio is ServicioLaboratorio laboratorio && laboratorio.NivelComplejidad <= 3)
             {
                 cantidadServiciosSimples++;
             }
