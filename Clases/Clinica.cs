@@ -50,7 +50,7 @@ internal class Clinica
 
         foreach (Servicio servicio in items)
         {
-            //le puse el igual porque en calcular precio se toma como servicio de complejidad los mayores a tres, o sea 4 y 5, para que quede igual
+
             if (servicio is ServicioLaboratorio laboratorio && laboratorio.NivelComplejidad <= 3)
             {
                 cantidadServiciosSimples++;
@@ -76,7 +76,10 @@ internal class Clinica
     {
         foreach (Servicio item in items)
         {
-            Console.WriteLine($"\nNombre del servicio: {item.GetType().Name}");
+            string nombreCompleto = item.GetType().Name;
+            string nombreServicio = "Servicio";
+            string nombreFinal = nombreCompleto.Replace(nombreServicio, "");
+            Console.WriteLine($"\nNombre del servicio: {nombreFinal}");
             Console.WriteLine($"Detalles específicos: {ObtenerDetallesEspecificos(item)}");
             Console.WriteLine($"Precio final calculado: {item.CalcularPrecio():C2}");
         }
@@ -88,17 +91,17 @@ internal class Clinica
         {
             if (servicioMedico is ServicioLaboratorio laboratorio)
             {
-                return $"\n\tNombre: {laboratorio.Nombre},\n\tNivel de complejidad: {laboratorio.NivelComplejidad}, " +
+                return $"\n\tNombre: {laboratorio.Nombre},\n\tNivel de complejidad: {laboratorio.NivelComplejidad} " +
                     $"\n\tCantidad de días: {servicioMedico.CantidadDias}";
             }
             else if (servicioMedico is ServicioInternacion internacion)
             {
-                return $"\n\tEspecialidad: {internacion.Especialidad}, \n\tCantidad de días: {servicioMedico.CantidadDias}";
+                return $"\n\tEspecialidad: {internacion.Especialidad} \n\tCantidad de días: {servicioMedico.CantidadDias}";
             }
         }
         else if (item is Medicamento medicamento)
         {
-            return $"\n\tNombre: {medicamento.Nombre},\n\tPorcentaje de ganancia: %{medicamento.PorcentajeGanancia}, " +
+            return $"\n\tNombre: {medicamento.Nombre}\n\tPorcentaje de ganancia: {medicamento.PorcentajeGanancia} % " +
                 $"\n\tPrecio de lista: {medicamento.PrecioLista:C2}";
         }
 

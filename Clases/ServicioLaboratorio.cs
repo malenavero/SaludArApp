@@ -6,7 +6,7 @@ namespace saludAr.Clases
         public string Nombre { get; set; }
         public int NivelComplejidad { get; set; }
 
-        //cambie el orden de los parametros porque no funcionaba bien el calculo de los servicios de laboratorio de complejidad
+
         public ServicioLaboratorio(string nombre, int cantidadDias, int nivelComplejidad)
            : base(cantidadDias)
 
