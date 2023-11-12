@@ -69,7 +69,7 @@ internal class Clinica
     public void MostrarMontoTotalFacturado()
     {
         double montoTotalFacturado = MontoTotalFacturado();
-        Console.WriteLine("El monto total facturado en la clinica fue: " + montoTotalFacturado);
+        Console.WriteLine("El monto total facturado en la clinica fue: $ " + montoTotalFacturado);
     }
 
     public void MostrarDetalles()
@@ -91,7 +91,7 @@ internal class Clinica
         {
             if (servicioMedico is ServicioLaboratorio laboratorio)
             {
-                return $"\n\tNombre: {laboratorio.Nombre},\n\tNivel de complejidad: {laboratorio.NivelComplejidad} " +
+                return $"\n\tNombre: {laboratorio.Nombre} \n\tNivel de complejidad: {laboratorio.NivelComplejidad} " +
                     $"\n\tCantidad de días: {servicioMedico.CantidadDias}";
             }
             else if (servicioMedico is ServicioInternacion internacion)
